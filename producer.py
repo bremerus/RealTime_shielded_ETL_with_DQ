@@ -36,10 +36,10 @@ def build_and_save_dataset():
             customers_data = {
                 "Customer_id": str(row.get('customer_id', '')),
                 "customer_fullname": fake.name(),
-                "Customer_email": fake.email(),
+                "Customer_email": fake.free_email(),                                            #θα ελεγα να κρατησουμε το free_emeil γιατι δίνει διαφορετικες διευθηνσεις περα απο το @example.com που βγαζει μονο το απλο email
                 "Customer_afm": f"{random.randint(100000000, 999999999)}",
                 "Customer_phone_number": fake.phone_number(),
-                "Customer_country": "Greece",
+                "Customer_country": "Greece",                                                   #επισης εδω ισως να βάλουμε
                 "Customer_ip": fake.ipv4(),
                 "Customer_date_of_birth": fake.date_of_birth(minimum_age=18, maximum_age=70).strftime("%Y-%m-%d"),
                 "Customer_last_login_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
